@@ -1,3 +1,4 @@
+import Converter.Companion.byteToHex
 import androidx.compose.desktop.ui.tooling.preview.Preview
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -72,20 +73,6 @@ fun App() {
 //    return array
 //}
 
-fun byteToHex(byteArray : ByteArray) : String{
-    var string = ""
-
-    byteArray.forEach {
-
-        val first =  it.toUByte().toInt() / 16
-        val second = it.toUByte().toInt() % 16
-
-        string += String.format("%01X", first)
-        string += String.format("%01X", second)
-    }
-
-    return string
-}
 
 fun main() = application {
     Window(onCloseRequest = ::exitApplication, title = "Byte Viewer"
